@@ -35,3 +35,12 @@
 .active {
   background-color: #333;
 }
+
+.logoutBtn {
+  background: transparent;
+  border: none;
+  color: #007bff;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+}
