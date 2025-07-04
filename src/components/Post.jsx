@@ -10,7 +10,7 @@ const Post = ({ post }) => {
     likes,
     tags,
     location,
-    likedBy,
+    // likedBy,
   } = post;
 
   // State for like, follow, comments toggle
