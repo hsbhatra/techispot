@@ -4,36 +4,43 @@ import styles from '../style/Navbar.module.css';
 
 const Navbar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
-  // Check login state on load
   useEffect(() => {
     const user = localStorage.getItem('loggedInUser');
     setIsLoggedIn(!!user);
   }, []);
 
-  // Handle logout
   const handleLogout = () => {
     localStorage.removeItem('loggedInUser');
     setIsLoggedIn(false);
-    navigate('/login'); // redirect to login
+    navigate('/login');
+    setIsMenuOpen(false);
   };
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
     <nav className={styles.navbar}>
       <div className={styles.logo}>🧠 Techispot</div>
-      <ul className={styles.navLinks}>
-        <li><NavLink to="/" activeclassname={styles.active}>🏠 Home</NavLink></li>
-        <li><NavLink to="/news" activeclassname={styles.active}>📰 Tech News</NavLink></li>
-        <li><NavLink to="/memes" activeclassname={styles.active}>😂 Memes</NavLink></li>
-        <li><NavLink to="/projects" activeclassname={styles.active}>🚀 Projects</NavLink></li>
 
-        {/* Show Login or Logout based on state */}
+      {/* Hamburger */}
+      <div className={styles.hamburger} onClick={toggleMenu}>
+        ☰
+      </div>
+
+      {/* Nav Links */}
+      <ul className={`${styles.navLinks} ${isMenuOpen ? styles.showMenu : ''}`}>
+        <li><NavLink to="/" onClick={() => setIsMenuOpen(false)}>🏠 Home</NavLink></li>
+        <li><NavLink to="/news" onClick={() => setIsMenuOpen(false)}>📰 Tech News</NavLink></li>
+        <li><NavLink to="/memes" onClick={() => setIsMenuOpen(false)}>😂 Memes</NavLink></li>
+        <li><NavLink to="/projects" onClick={() => setIsMenuOpen(false)}>🚀 Projects</NavLink></li>
         <li>
           {isLoggedIn ? (
             <button className={styles.logoutBtn} onClick={handleLogout}>🚪 Logout</button>
           ) : (
-            <NavLink to="/login" activeclassname={styles.active}>🔐 Login</NavLink>
+            <NavLink to="/login" onClick={() => setIsMenuOpen(false)}>🔐 Login</NavLink>
           )}
         </li>
       </ul>

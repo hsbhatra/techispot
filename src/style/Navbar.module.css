@@ -44,3 +44,36 @@
   cursor: pointer;
   font-size: 16px;
 }
+
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .navLinks {
+    display: none;
+    flex-direction: column;
+    background-color: #1c1c1c;
+    position: absolute;
+    top: 58px;
+    right: 0;
+    width: 200px;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 8px 0 8px 8px;
+  }
+
+  .showMenu {
+    display: flex;
+  }
+
+  .navLinks li {
+    margin: 8px 0;
+  }
+}
