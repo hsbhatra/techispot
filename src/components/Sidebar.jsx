@@ -54,9 +54,11 @@ const Sidebar = () => {
       <section className={styles.communitySection}>
         <h3>
           🌐 Communities
-          <button onClick={() => setShowModal(true)} className={styles.addBtn}>
-            ➕
-          </button>
+          {localStorage.getItem("loggedInUser") && (
+            <button
+              onClick={() => setShowModal(true)}
+              className={styles.addBtn}> ➕ </button>
+          )}
         </h3>
         {communities.map((comm, i) => (
           <div key={i} className={styles.communityCard}>

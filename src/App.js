@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Post from "./components/Post";
@@ -9,9 +14,9 @@ import MemeGallery from "./components/MemeGallery";
 import ProjectSpotlight from "./components/ProjectSpotlight";
 import CreatePostModal from "./components/CreatePostModal";
 
-import SignUp from './pages/SignUp';
-import Login from './pages/Login';
-import ForgotPassword from './pages/ForgotPassword';
+import SignUp from "./pages/SignUp";
+import Login from "./pages/Login";
+import ForgotPassword from "./pages/ForgotPassword";
 
 import postData from "./data/postData";
 import "./App.css";
@@ -51,7 +56,9 @@ function InnerApp({ showModal, setShowModal, allPosts, handleAddPost }) {
               path="/"
               element={
                 <>
-                  <h2 style={{ textAlign: "center", marginTop: "20px" }}>Techispot Feed</h2>
+                  <h2 style={{ textAlign: "center", marginTop: "20px" }}>
+                    Techispot Feed
+                  </h2>
                   {allPosts.map((p, i) => (
                     <Post key={i} post={p} />
                   ))}
@@ -70,8 +77,18 @@ function InnerApp({ showModal, setShowModal, allPosts, handleAddPost }) {
         {!hideSidebar && <Sidebar />}
       </div>
 
-      <button className="floatingBtn" onClick={() => setShowModal(true)}>➕</button>
-      {showModal && <CreatePostModal onClose={() => setShowModal(false)} onPost={handleAddPost} />}
+      {localStorage.getItem("loggedInUser") && (
+        <button className="floatingBtn" onClick={() => setShowModal(true)}>
+          ➕
+        </button>
+      )}
+
+      {showModal && (
+        <CreatePostModal
+          onClose={() => setShowModal(false)}
+          onPost={handleAddPost}
+        />
+      )}
     </>
   );
 }

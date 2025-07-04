@@ -105,16 +105,6 @@ const Post = ({ post }) => {
           {liked ? "❤️ Liked" : "🤍 Like"}
         </button>
         <p>{likeCount} Likes</p>
-        {/* <div className={styles.likedBy}>
-          {likedBy.map((user, i) => (
-            <img
-              key={i}
-              src={user.userImage}
-              alt={user.alt}
-              className={styles.likedAvatar}
-            />
-          ))}
-        </div> */}
       </div>
 
       {/* Comments Section */}
@@ -141,15 +131,17 @@ const Post = ({ post }) => {
         )}
 
         {/* 🆕 Comment Input Box */}
-        <div className={styles.commentInput}>
-          <input
-            type="text"
-            placeholder="Add a comment..."
-            value={newComment}
-            onChange={(e) => setNewComment(e.target.value)}
-          />
-          <button onClick={handleAddComment}>Post</button>
-        </div>
+        {localStorage.getItem("loggedInUser") && (
+          <div className={styles.commentInput}>
+            <input
+              type="text"
+              placeholder="Add a comment..."
+              value={newComment}
+              onChange={(e) => setNewComment(e.target.value)}
+            />
+            <button onClick={handleAddComment}>Post</button>
+          </div>
+        )}
       </div>
     </div>
   );
