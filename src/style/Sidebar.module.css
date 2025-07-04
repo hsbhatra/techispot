@@ -1,0 +1,38 @@
+.sidebar {
+  width: 300px;
+  padding: 16px;
+  background-color: #f9f9f9;
+  border-left: 1px solid #ddd;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+.mentorSection,
+.communitySection {
+  margin-bottom: 24px;
+}
+
+.mentorCard,
+.communityCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+  gap: 10px;
+}
+
+.mentorCard img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.communityCard button {
+  background-color: #007bff;
+  color: white;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
