@@ -78,3 +78,59 @@
   gap: 10px;
   margin-bottom: 10px;
 }
+
+.likeBtn {
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  margin-right: 10px;
+  color: crimson;
+}
+
+.showMoreBtn {
+  background: transparent;
+  border: none;
+  color: #007bff;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.commentInput {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.commentInput input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.commentInput button {
+  background: #007bff;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.likeBtn {
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  margin-right: 10px;
+  color: crimson;
+}
+
+.showMoreBtn {
+  background: transparent;
+  border: none;
+  color: #007bff;
+  font-weight: 500;
+  cursor: pointer;
+}
