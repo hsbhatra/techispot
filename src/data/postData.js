@@ -35,7 +35,7 @@ const postData = {
     }
   ],
   timestamp: '2024-03-12T10:15:00',
-  likes: 15,
+  likes: 0,
   tags: ['technology', 'coding'],
   location: 'india',
   likedBy: [

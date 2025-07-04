@@ -47,3 +47,21 @@
   flex: 1;
   padding: 20px;
 }
+
+/* Responsive layout for small screens */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .sidebar {
+    width: 100% !important;
+    position: static !important;
+    border-left: none;
+  }
+
+  .main-feed {
+    width: 100%;
+  }
+}

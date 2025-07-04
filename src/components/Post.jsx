@@ -105,7 +105,7 @@ const Post = ({ post }) => {
           {liked ? "❤️ Liked" : "🤍 Like"}
         </button>
         <p>{likeCount} Likes</p>
-        <div className={styles.likedBy}>
+        {/* <div className={styles.likedBy}>
           {likedBy.map((user, i) => (
             <img
               key={i}
@@ -114,7 +114,7 @@ const Post = ({ post }) => {
               className={styles.likedAvatar}
             />
           ))}
-        </div>
+        </div> */}
       </div>
 
       {/* Comments Section */}
